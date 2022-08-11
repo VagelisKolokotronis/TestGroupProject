@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class ImpProductService implements ProdServiceInterface {
 
-    //Injecting The repository for the Entity Product which extends JpaRepository with build in Methods
+    //Injecting The repository for the Entity Product which extends JpaRepository with build in Methods via the Interface from Services
     @Autowired
     ProductRepo productRepo;
 

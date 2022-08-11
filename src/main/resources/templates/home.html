@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
     <h2>Welcome to Home Page</h2> <br>
-    <h2>Insert Product</h2> <br>
-    <form action="/insert" method="post">
-        Product Name <input type="text" name="productName">
-        Price <input type="number" name="productPrice"> <br>
-        <br>
-        Product Info <textarea name="message" rows="2" cols="20"></textarea>
-        <input type="submit">
+    <form action="/sendToProduct" method="post">
+        <button type="submit">Add Product</button>
+
     </form>
+    <br>
+    <form action="/sendToCustomer" method="post">
+        <button type="submit">Add customer</button>
+    </form>
+
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Customer List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Nr</th>
+                <th>P.C</th>
+                <th>Street</th>
+                <th>Street Nr</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- iterates through the table GuestCustomer which is assigned to the value "customers" via the method getAllCustomers() -->
+            <tr th:each = "customer: ${customers}">
+                <td th:text="${customer.cusFname}"/>
+                <td th:text="${customer.cusLname}"/>
+                <td th:text="${customer.cusEmail}"/>
+                <td th:text="${customer.cusPhonenr}"/>
+                <td th:text="${customer.cusPostalc}"/>
+                <td th:text="${customer.cusStreet}"/>
+                <td th:text="${customer.getCusStreetnr()}"/>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

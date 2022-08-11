@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+  <body>
+    <h1>Products</h1>
+    <form th:action="@{/insertCustomer}" method="post">
+        Name <input type="text" th:name="cusName"><br>
+        <br>
+        Last Name <input type="text" th:name="cusLName"><br>
+        <br>
+        Email <input type="text" th:name="cusEmail"> <br>
+        <br>
+        Phone number <input type="number" th:name="cusPhone"><br>
+        <br>
+        Postal Code <input type="number" th:name="cusPC"><br>
+        <br>
+        Street <input type="text" th:name="cusStreet"><br>
+        <br>
+        Street number <input type="number" th:name="cusStreetNr"><br>
+        <br>
+        <input type="submit">
+    </form>
+  </body>
+</html>

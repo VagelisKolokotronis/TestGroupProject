@@ -31,6 +31,20 @@ public class CustomerGuest {
     @Column(name = "cus_StreetNr")
     private Integer cusStreetnr;
 
+    public CustomerGuest(String cusFname, String cusLname, String cusEmail, Integer cusPhonenr, Integer cusPostalc, String cusStreet, Integer cusStreetnr) {
+        this.cusFname = cusFname;
+        this.cusLname = cusLname;
+        this.cusEmail = cusEmail;
+        this.cusPhonenr = cusPhonenr;
+        this.cusPostalc = cusPostalc;
+        this.cusStreet = cusStreet;
+        this.cusStreetnr = cusStreetnr;
+    }
+
+    public CustomerGuest() {
+
+    }
+
     public Integer getId() {
         return id;
     }

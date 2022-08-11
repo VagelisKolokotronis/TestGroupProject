@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
 </head>
   <body>
-    <h1>Products</h1>
+    <h1>Products</h1><br>
+    <h2>Insert Product</h2> <br>
+    <form th:action="@{/insertProduct}" method="post">
+        Product Name <input type="text" th:name="productName">
+        Price <input type="number" th:name="productPrice"> <br>
+        <br>
+        Product Info <textarea th:name="message" rows="2" cols="20"></textarea>
+        <input type="submit">
+    </form>
 
   </body>
 </html>

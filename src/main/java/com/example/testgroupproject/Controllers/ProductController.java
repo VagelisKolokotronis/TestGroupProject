@@ -20,15 +20,16 @@ public class ProductController {
     ProdServiceInterface prodService;
 
     // Url Mapping and Requesting the parameters from the View
-    @PostMapping("/insert")
+    @PostMapping("/insertProduct")
     public String insertProduct(@RequestParam("productName") String productName,
                                 @RequestParam("productPrice") Double productPrice,
                                 ModelMap mm){
-
+        //Invokes constructor and creates new obj, then calls Interface from Services and implements the method insertProduct from impProductService
         Product product = new Product(productName, productPrice);
         prodService.insertProduct(product);
-        List<Product> allProducts = prodService.getAllProducts();
-        mm.addAttribute("allProducts", allProducts);
-        return "ProductForm";
+
+        //Stores the value of the method getAllProducts into "products" and send it to the html page assigned to 'return'.
+        mm.addAttribute("products", prodService.getAllProducts());
+        return "productList";
     }
 }
