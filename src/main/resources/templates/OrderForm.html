@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+  <body>
+    <div>
+
+    </div>
+    <h1>Insert Order</h1>
+    <form th:action="@{/insertOrder}" method="post">
+        Payment Type <input type="text" th:name="paymentType">
+        <br>
+        <input type="submit">
+    </form>
+
+    <!--      <select name="select">-->
+    <!--        <option value="0">Select Payment</option>-->
+    <!--        <option value="1">Cash</option>-->
+    <!--        <option value="2">Credit Card</option>-->
+    <!--        <option value="1">PayPal</option>-->
+    <!--      </select>-->
+  </body>
+</html>

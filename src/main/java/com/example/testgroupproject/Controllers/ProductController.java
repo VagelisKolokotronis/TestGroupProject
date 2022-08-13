@@ -23,9 +23,12 @@ public class ProductController {
     @PostMapping("/insertProduct")
     public String insertProduct(@RequestParam("productName") String productName,
                                 @RequestParam("productPrice") Double productPrice,
+                                @RequestParam("message") String message,
+                                @RequestParam("discount") Double discount,
                                 ModelMap mm){
+
         //Invokes constructor and creates new obj, then calls Interface from Services and implements the method insertProduct from impProductService
-        Product product = new Product(productName, productPrice);
+        Product product = new Product(productName, productPrice, message, discount);
         prodService.insertProduct(product);
 
         //Stores the value of the method getAllProducts into "products" and send it to the html page assigned to 'return'.

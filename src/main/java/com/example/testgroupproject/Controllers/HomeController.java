@@ -25,4 +25,12 @@ public class HomeController {
 
         return ("CustomerForm");
     }
+
+    @PostMapping("/sendToOrder")
+    public String redirectToOrder() {
+
+        return ("OrderForm");
+    }
+
+
 }

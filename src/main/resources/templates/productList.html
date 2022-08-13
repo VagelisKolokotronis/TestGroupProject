@@ -18,6 +18,8 @@
       <tr th:each = "product: ${products}">
           <td th:text="${product.getProductName()}"/>
           <td th:text="${product.getProductPrice()}"/>
+          <td th:text="${product.getProductInfo()}"/>
+          <td th:text="${product.getPossibleDiscount()}"/>
       </tr>
       </tbody>
   </table>

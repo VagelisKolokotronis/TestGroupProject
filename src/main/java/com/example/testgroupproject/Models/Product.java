@@ -32,6 +32,13 @@ public class Product {
 
     }
 
+    public Product(String productName, Double productPrice, String productInfo, Double possibleDiscount) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productInfo = productInfo;
+        this.possibleDiscount = possibleDiscount;
+    }
+
     public Integer getId() {
         return id;
     }

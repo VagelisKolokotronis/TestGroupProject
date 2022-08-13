@@ -20,6 +20,20 @@ public class Order {
     @Column(name = "order_date")
     private Instant orderDate;
 
+    public Order(String paymentType, Integer shipmentInfo, Instant orderDate) {
+        this.paymentType = paymentType;
+        this.shipmentInfo = shipmentInfo;
+        this.orderDate = orderDate;
+    }
+
+    public Order() {
+
+    }
+
+    public Order(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
     public Integer getId() {
         return id;
     }
