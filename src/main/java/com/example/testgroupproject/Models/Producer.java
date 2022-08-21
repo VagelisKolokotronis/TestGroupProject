@@ -31,6 +31,19 @@ public class Producer {
     @Column(name = "prod_Bus_Title", length = 45)
     private String prodBusTitle;
 
+    public Producer(String prodFname, String prodLname, String prodAddress, String prodArea, String prodEmail, String prodIban, String prodBusTitle) {
+        this.prodFname = prodFname;
+        this.prodLname = prodLname;
+        this.prodAddress = prodAddress;
+        this.prodArea = prodArea;
+        this.prodEmail = prodEmail;
+        this.prodIban = prodIban;
+        this.prodBusTitle = prodBusTitle;
+    }
+
+    public Producer() {
+    }
+
     public Integer getId() {
         return id;
     }

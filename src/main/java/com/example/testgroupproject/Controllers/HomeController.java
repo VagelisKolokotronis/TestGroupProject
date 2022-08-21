@@ -32,5 +32,11 @@ public class HomeController {
         return ("OrderForm");
     }
 
+    @PostMapping("/sendToProducer")
+    public String redirectToProducer(){
+
+        return ("ProducerForm");
+    }
+
 
 }

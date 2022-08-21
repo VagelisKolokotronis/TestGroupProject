@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>ProducerList</title>
+  </head>
+  <body>
+    <h1>Producer List</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>County</th>
+            <th>Email</th>
+            <th>IBAN</th>
+            <th>Business</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- iterates through the table Producer which is assigned to the value "producers" via the method getAllProducers() -->
+        <tr th:each = "producer: ${producers}">
+            <td th:text="${producer.prodFname}"/>
+            <td th:text="${producer.prodLname}"/>
+            <td th:text="${producer.prodAddress}"/>
+            <td th:text="${producer.prodArea}"/>
+            <td th:text="${producer.prodEmail}"/>
+            <td th:text="${producer.prodIban}"/>
+            <td th:text="${producer.prodBusTitle}"/>
+        </tr>
+        </tbody>
+    </table>
+  </body>
+</html>

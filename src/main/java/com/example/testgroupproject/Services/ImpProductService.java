@@ -22,4 +22,19 @@ public class ImpProductService implements ProdServiceInterface {
     public List<Product> getAllProducts(){
         return productRepo.findAll();
     }
+
+    @Override
+    public Product getProductById(Integer id) {
+        return productRepo.findById(id).get();
+    }
+
+    @Override
+    public Product updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount) {
+        return null;
+    }
+
+    @Override
+    public void deleteProduct(Product p) {
+        productRepo.delete(p);
+    }
 }
