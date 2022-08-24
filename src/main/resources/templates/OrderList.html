@@ -10,11 +10,13 @@
         <thead>
         <tr>
             <th>Payment type</th>
+            <th>Order Date</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each = "order: ${orders}">
             <td th:text="${order.paymentType}"/>
+            <td th:text="${order.getOrderDate()}"/>
         </tr>
         </tbody>
     </table>
