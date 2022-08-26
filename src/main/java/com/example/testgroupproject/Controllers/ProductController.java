@@ -5,14 +5,10 @@ import com.example.testgroupproject.Services.ProdServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("/product")
 public class ProductController {
 
     //Injecting Interface methods from Service via ImpProductService (@Autowired)
@@ -34,5 +30,38 @@ public class ProductController {
         //Stores the value of the method getAllProducts into "products" and send it to the html page assigned to 'return'.
         mm.addAttribute("products", prodService.getAllProducts());
         return "productList";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showUpdatedProductForm(@PathVariable("id") Integer id, ModelMap mm) {
+
+        Product product = prodService.getProductById(id);
+
+        mm.addAttribute("product", product);
+        return "UpdateProduct";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateProduct(@PathVariable("id") Integer id,
+                                @ModelAttribute("product") Product product, BindingResult result,
+                                @RequestParam("productName") String productName,
+                                @RequestParam("productPrice") Double productPrice,
+                                @RequestParam("message") String message,
+                                @RequestParam("discount") Double discount) {
+        if (result.hasErrors()) {
+            product.setId(id);
+            return "UpdateProduct";
+        }
+
+        prodService.updateProduct(id, productName, productPrice, message, discount);
+        return "home";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") Integer id, ModelMap mm) {
+        Product product = prodService.getProductById(id);
+
+        prodService.deleteProduct(product);
+        return "home";
     }
 }

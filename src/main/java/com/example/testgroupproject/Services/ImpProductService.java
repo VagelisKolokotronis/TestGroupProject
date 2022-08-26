@@ -4,10 +4,13 @@ import com.example.testgroupproject.Models.Product;
 import com.example.testgroupproject.Repositories.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 
 @Service
+@Transactional
 public class ImpProductService implements ProdServiceInterface {
 
     //Injecting The repository for the Entity Product which extends JpaRepository with build in Methods via the Interface from Services
@@ -29,8 +32,19 @@ public class ImpProductService implements ProdServiceInterface {
     }
 
     @Override
+    public void updateProduct(Product p) {
+
+        productRepo.save(p);
+    }
+
+    @Override
     public Product updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount) {
-        return null;
+        Product p = this.getProductById(id);
+        p.setProductName(productName);
+        p.setProductPrice(productPrice);
+        p.setProductInfo(productInfo);
+        productRepo.save(p);
+        return p;
     }
 
     @Override
