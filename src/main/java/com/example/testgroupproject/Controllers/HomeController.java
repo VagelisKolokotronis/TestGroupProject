@@ -31,25 +31,25 @@ public class HomeController {
     @PostMapping("/sendToProduct")
     public String redirectToProduct() {
 
-        return ("ProductForm");
+        return ("Product/ProductForm");
     }
 
     @PostMapping("/sendToCustomer")
     public String redirectToCustomer() {
 
-        return ("CustomerForm");
+        return ("Customer/CustomerForm");
     }
 
     @PostMapping("/sendToOrder")
     public String redirectToOrder() {
 
-        return ("OrderForm");
+        return ("Order/OrderForm");
     }
 
     @PostMapping("/sendToProducer")
     public String redirectToProducer(){
 
-        return ("ProducerForm");
+        return ("Producer/ProducerForm");
     }
 
     @PostMapping("/sendToProductList")
@@ -57,7 +57,7 @@ public class HomeController {
 
         mm.addAttribute("products", prodService.getAllProducts());
 
-        return ("productList");
+        return ("Product/ProductList");
     }
 
     @PostMapping("/sendToOrderList")
@@ -65,21 +65,21 @@ public class HomeController {
 
         mm.addAttribute("orders", orderService.getAllOrders());
 
-        return ("OrderList");
+        return ("Order/OrderList");
     }
 
     @PostMapping("/sendToCustomerList")
     public String redirectToCustomerList(ModelMap mm) {
 
         mm.addAttribute("customers", customerService.getAllCustomers());
-        return ("CustomerList");
+        return ("Customer/CustomerList");
     }
 
     @PostMapping("/sendToProducerList")
     public String redirectToProducerList(ModelMap mm) {
 
         mm.addAttribute("producers", producerService.getAllProducers());
-        return "ProducerList";
+        return "Producer/ProducerList";
     }
 
 

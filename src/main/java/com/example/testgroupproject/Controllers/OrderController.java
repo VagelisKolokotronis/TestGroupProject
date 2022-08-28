@@ -8,8 +8,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.Instant;
-
 @Controller
 public class OrderController {
 
@@ -24,7 +22,7 @@ public class OrderController {
         orderService.insertOrder(order);
 
         mm.addAttribute("orders", orderService.getAllOrders());
-        return "OrderList";
+        return "Order/OrderList";
 
     }
 }

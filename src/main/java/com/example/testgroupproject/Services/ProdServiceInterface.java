@@ -12,12 +12,10 @@ public interface ProdServiceInterface {
 
     Product getProductById(Integer id);
 
+    void deleteProduct(Product p);
+
     void updateProduct(Product p);
 
+  //  void updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount);
 
-    Product updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount);
-
-
-
-    void deleteProduct(Product p);
 }

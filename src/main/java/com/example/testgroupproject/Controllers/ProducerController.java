@@ -29,6 +29,6 @@ public class ProducerController {
 
         //Stores the value of the method getAllProducers into "producers" and send it to the html page assigned to 'return'.
         mm.addAttribute("producers", producerService.getAllProducers());
-        return "ProducerList";
+        return "Producer/ProducerList";
     }
 }

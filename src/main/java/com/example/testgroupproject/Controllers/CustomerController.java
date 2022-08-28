@@ -6,10 +6,8 @@ import com.example.testgroupproject.Services.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CustomerController {
@@ -34,6 +32,38 @@ public class CustomerController {
         customerService.insertCustomer(customer);
         //Stores the value of the method getAllCustomers into "customers" and send it to the html page assigned to 'return'.
         mm.addAttribute("customers", customerService.getAllCustomers());
-        return "CustomerList";
+        return "Customer/CustomerList";
+    }
+
+    @GetMapping("/editCustomer/{id}")
+    public String showUpdateCustomerForm(@PathVariable("id") Integer id, ModelMap mm) {
+
+        //Calling method that fetches DB item by id
+        CustomerGuest customer = customerService.getCustomerById(id);
+
+        //Stores value on variable customer and binds it on variable "customer" for View
+        mm.addAttribute("customer", customer);
+        return "Customer/UpdateCustomer";
+    }
+
+    //Takes object id from the method "showUpdateCustomerForm" and updates it
+    @PostMapping("/updateCustomer/{id}")
+    public String updateCustomer(@PathVariable("id") Integer id,
+                                 @ModelAttribute("customer") CustomerGuest customer, BindingResult result) {
+        if (result.hasErrors()) {
+            customer.setId(id);
+            return "Customer/UpdateCustomer";
+        }
+        customerService.updateCustomer(customer);
+        return "home";
+    }
+
+    //Delete obj "Product"
+    @GetMapping("/deleteCustomer/{id}")
+    public String deleteCustomer(@PathVariable("id") Integer id, ModelMap mm) {
+        CustomerGuest customer = customerService.getCustomerById(id);
+
+        customerService.deleteCustomer(customer);
+        return "home";
     }
 }

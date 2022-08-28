@@ -29,35 +29,35 @@ public class ProductController {
 
         //Stores the value of the method getAllProducts into "products" and send it to the html page assigned to 'return'.
         mm.addAttribute("products", prodService.getAllProducts());
-        return "productList";
+        return "Product/ProductList";
     }
 
-    @GetMapping("/edit/{id}")
+    //Binding controller with view on id
+    @GetMapping("/editProduct/{id}")
     public String showUpdatedProductForm(@PathVariable("id") Integer id, ModelMap mm) {
 
+        //Calling method that fetches DB item by id
         Product product = prodService.getProductById(id);
 
+        //Stores value on variable product and binds it on variable "product" for View
         mm.addAttribute("product", product);
-        return "UpdateProduct";
+        return "Product/UpdateProduct";
     }
 
-    @PostMapping("/update/{id}")
+    //Takes object id from the method "showUpdatedProductForm" and updates it
+    @PostMapping("/updateProduct/{id}")
     public String updateProduct(@PathVariable("id") Integer id,
-                                @ModelAttribute("product") Product product, BindingResult result,
-                                @RequestParam("productName") String productName,
-                                @RequestParam("productPrice") Double productPrice,
-                                @RequestParam("message") String message,
-                                @RequestParam("discount") Double discount) {
+                                @ModelAttribute("product") Product product, BindingResult result) {
         if (result.hasErrors()) {
             product.setId(id);
-            return "UpdateProduct";
+            return "Product/UpdateProduct";
         }
-
-        prodService.updateProduct(id, productName, productPrice, message, discount);
+        prodService.updateProduct(product);
         return "home";
     }
 
-    @GetMapping("/delete/{id}")
+    //Delete obj "Product"
+    @GetMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable("id") Integer id, ModelMap mm) {
         Product product = prodService.getProductById(id);
 

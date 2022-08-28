@@ -6,12 +6,13 @@
   </head>
   <body>
     <h1>Update Product</h1>
-    <form th:action="@{/update/{id}(id=${product.id})}" th:object="${product}" method="post">
+    <!--Mapping and binding the object's id with ModelMap -->>
+    <form th:action="@{/updateProduct/{id}(id=${product.id})}" th:object="${product}" method="post">
         Product Name <input type="text" th:name="productName">
         Price <input type="number" th:name="productPrice"> <br>
         <br>
-        Product Info <textarea th:name="message" rows="2" cols="20"></textarea><br>
-        Possible discount? <input type="number" th:name="discount">
+        Product Info <textarea th:name="productInfo" rows="2" cols="20"></textarea><br>
+        Possible discount? <input type="number" th:name="possibleDiscount">
         <input type="submit">
     </form>
   </body>

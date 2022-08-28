@@ -11,4 +11,10 @@ public interface CustomerServiceInterface {
     void insertCustomer(CustomerGuest c);
 
     List<CustomerGuest> getAllCustomers();
+
+    CustomerGuest getCustomerById(Integer id);
+
+    void deleteCustomer(CustomerGuest c);
+
+    void updateCustomer(CustomerGuest c);
 }

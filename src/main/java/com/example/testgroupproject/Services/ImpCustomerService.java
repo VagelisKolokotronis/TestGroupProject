@@ -25,5 +25,20 @@ public class ImpCustomerService implements CustomerServiceInterface{
         return customerRepo.findAll();
     }
 
+    @Override
+    public CustomerGuest getCustomerById(Integer id) {
+        return customerRepo.findById(id).get();
+    }
+
+    @Override
+    public void deleteCustomer(CustomerGuest c) {
+        customerRepo.delete(c);
+    }
+
+    @Override
+    public void updateCustomer(CustomerGuest c) {
+        customerRepo.save(c);
+    }
+
 
 }

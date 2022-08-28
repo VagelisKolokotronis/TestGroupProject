@@ -33,18 +33,7 @@ public class ImpProductService implements ProdServiceInterface {
 
     @Override
     public void updateProduct(Product p) {
-
         productRepo.save(p);
-    }
-
-    @Override
-    public Product updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount) {
-        Product p = this.getProductById(id);
-        p.setProductName(productName);
-        p.setProductPrice(productPrice);
-        p.setProductInfo(productInfo);
-        productRepo.save(p);
-        return p;
     }
 
     @Override

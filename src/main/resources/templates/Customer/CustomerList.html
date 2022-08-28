@@ -28,6 +28,8 @@
                 <td th:text="${customer.cusPostalc}"/>
                 <td th:text="${customer.cusStreet}"/>
                 <td th:text="${customer.getCusStreetnr()}"/>
+                <td><a th:href="@{/editCustomer/{id}(id=${customer.id})}">Update</a></td>
+                <td><a th:href="@{/deleteCustomer/{id}(id=${customer.id})}">Delete</a></td>
             </tr>
         </tbody>
     </table>
