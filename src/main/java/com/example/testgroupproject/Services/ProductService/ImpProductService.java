@@ -1,4 +1,4 @@
-package com.example.testgroupproject.Services;
+package com.example.testgroupproject.Services.ProductService;
 
 import com.example.testgroupproject.Models.Product;
 import com.example.testgroupproject.Repositories.ProductRepo;

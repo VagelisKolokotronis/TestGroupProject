@@ -1,4 +1,4 @@
-package com.example.testgroupproject.Services;
+package com.example.testgroupproject.Services.CustomerService;
 
 
 import com.example.testgroupproject.Models.CustomerGuest;

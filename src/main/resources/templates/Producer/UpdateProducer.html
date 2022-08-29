@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Update Producer</title>
+    </head>
+    <body>
+        <h1>Update Producer</h1>
+
+        <form th:action="@{/updateProducer/{id}(id=${producer.id})}" method="post">
+            Name <input type="text" th:name="prodFname"><br>
+            <br>
+            Last Name <input type="text" th:name="prodLname"><br>
+            <br>
+            Address <input type="text" th:name="prodAddress"><br>
+            <br>
+            County <input type="text" th:name="prodArea"><br>
+            <br>
+            Email <input type="text" th:name="prodEmail"><br>
+            <br>
+            IBAN <input type="text" th:name="prodIban"><br>
+            <br>
+            Business <input type="text" th:name="prodBusTitle"><br>
+            <br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

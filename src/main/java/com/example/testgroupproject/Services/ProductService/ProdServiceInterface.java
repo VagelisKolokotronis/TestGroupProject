@@ -1,4 +1,4 @@
-package com.example.testgroupproject.Services;
+package com.example.testgroupproject.Services.ProductService;
 
 import com.example.testgroupproject.Models.Product;
 
@@ -16,6 +16,5 @@ public interface ProdServiceInterface {
 
     void updateProduct(Product p);
 
-  //  void updateProduct(Integer id, String productName, Double productPrice, String productInfo, Double possibleDiscount);
 
 }

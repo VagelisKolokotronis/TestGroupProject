@@ -1,4 +1,4 @@
-package com.example.testgroupproject.Services;
+package com.example.testgroupproject.Services.ProducerService;
 
 import com.example.testgroupproject.Models.Producer;
 import com.example.testgroupproject.Repositories.ProducerRepo;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ImpProducerService implements ProducerServiceInterface{
+public class ImpProducerService implements ProducerServiceInterface {
 
     @Autowired
     ProducerRepo producerRepo;
@@ -21,5 +21,20 @@ public class ImpProducerService implements ProducerServiceInterface{
     @Override
     public List<Producer> getAllProducers() {
         return producerRepo.findAll();
+    }
+
+    @Override
+    public Producer getProducerById(Integer id) {
+        return producerRepo.findById(id).get();
+    }
+
+    @Override
+    public void deleteProducer(Producer p) {
+        producerRepo.delete(p);
+    }
+
+    @Override
+    public void updateProducer(Producer p) {
+        producerRepo.save(p);
     }
 }

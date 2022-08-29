@@ -1,8 +1,7 @@
 package com.example.testgroupproject.Controllers;
 
 import com.example.testgroupproject.Models.CustomerGuest;
-import com.example.testgroupproject.Models.Product;
-import com.example.testgroupproject.Services.CustomerServiceInterface;
+import com.example.testgroupproject.Services.CustomerService.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

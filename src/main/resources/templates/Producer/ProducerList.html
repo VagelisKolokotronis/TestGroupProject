@@ -28,6 +28,8 @@
             <td th:text="${producer.prodEmail}"/>
             <td th:text="${producer.prodIban}"/>
             <td th:text="${producer.prodBusTitle}"/>
+            <td><a th:href="@{/editProducer/{id}(id=${producer.id})}">Update</a></td>
+            <td><a th:href="@{/deleteProducer/{id}(id=${producer.id})}">Delete</a></td>
         </tr>
         </tbody>
     </table>

@@ -1,15 +1,15 @@
-package com.example.testgroupproject.Services;
+package com.example.testgroupproject.Services.CustomerService;
 
 import com.example.testgroupproject.Models.CustomerGuest;
-import com.example.testgroupproject.Models.Product;
 import com.example.testgroupproject.Repositories.CustomerRepo;
+import com.example.testgroupproject.Services.CustomerService.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ImpCustomerService implements CustomerServiceInterface{
+public class ImpCustomerService implements CustomerServiceInterface {
 
     //Injecting The repository for the Entity CustomerGuest which extends JpaRepository with build in Methods via the Interface from Services
     @Autowired
