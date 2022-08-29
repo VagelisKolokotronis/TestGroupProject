@@ -28,6 +28,12 @@ public class HomeController {
         return("home");
     }
 
+    @PostMapping("/")
+    public String redirectToHome() {
+
+        return("/home");
+    }
+
     @PostMapping("/sendToProduct")
     public String redirectToProduct() {
 
