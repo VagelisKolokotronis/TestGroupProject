@@ -1,7 +1,7 @@
 package com.example.testgroupproject.Models;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "orders")
@@ -18,9 +18,9 @@ public class Order {
     private Integer shipmentInfo;
 
     @Column(name = "order_date")
-    private Instant orderDate;
+    private Date orderDate;
 
-    public Order(String paymentType, Integer shipmentInfo, Instant orderDate) {
+    public Order(String paymentType, Integer shipmentInfo, Date orderDate) {
         this.paymentType = paymentType;
         this.shipmentInfo = shipmentInfo;
         this.orderDate = orderDate;
@@ -60,11 +60,11 @@ public class Order {
         this.shipmentInfo = shipmentInfo;
     }
 
-    public Instant getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Instant orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 
